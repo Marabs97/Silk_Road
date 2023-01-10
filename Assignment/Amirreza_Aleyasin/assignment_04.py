@@ -118,7 +118,7 @@ from urllib import request
 
 
 def open_url(url):
-    logs = CustomLog2("Assignment_04\Task5_log.txt")
+    logs = CustomLog2("Task5_log.txt")
 
     try:
         link = request.urlopen(url)
@@ -188,6 +188,6 @@ def download_file(url, path):
         raise "Unexpected error happened!"
 
 
-download_file('https://www.google.com/robots.txt', "E:\Germany\GEORG-AUGUST Universitat "
-                                                   "Gottingen\WiSe22\B.inf.1842\Exercises\Assignments\Assignment_04")
-
+download_file('https://ia802707.us.archive.org/1/items/macbeth02264gut/0ws3410.txt',
+              "E:\Germany\GEORG-AUGUST Universitat "
+              "Gottingen\WiSe22\B.inf.1842\Exercises\Assignments\Assignment_04")

@@ -189,5 +189,4 @@ def download_file(url, path):
 
 
 download_file('https://ia802707.us.archive.org/1/items/macbeth02264gut/0ws3410.txt',
-              "E:\Germany\GEORG-AUGUST Universitat "
-              "Gottingen\WiSe22\B.inf.1842\Exercises\Assignments\Assignment_04")
+              "path")

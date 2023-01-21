@@ -43,13 +43,24 @@ class Results(models.Model):
     )
     '''
 
+    def number():
+        count = Results.objects.count()
+        if count is None:
+            return 1
+        else:
+            return count + 1
+
+    report_ID = models.IntegerField(unique=True, default=number)
+
     result = models.TextField()
     
     created_by = models.ForeignKey(UserProfileModel, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return self.created_by
+
+    # Requires a ForeignKey to entered symptoms
+
+    def __int__(self):
+        return self.report_ID
 
 
 '''

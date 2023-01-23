@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import User
 from django.conf import settings
 from django.db.models.signals import post_save
 
@@ -8,8 +8,8 @@ from django.db.models.signals import post_save
 
 
 class UserProfileModel(models.Model):
-    # user = models.OneToOneField(AbstractUser, on_delete=models.CASCADE, unique=True)
-    ID = models.AutoField(primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
+    # ID = models.AutoField(primary_key=True)
 
     class Memberships(models.TextChoices):
         PATIENT = 'L1', 'Patient'
@@ -46,7 +46,7 @@ class UserProfileModel(models.Model):
             f"{self.first_name}{' ' + self.middle_name if not self.middle_name is None else ''} {self.last_name}")
 
     def __str__(self):
-        return str(f"{self.ID}.{self.first_name}  {self.last_name}")
+        return str(f"{self.user.id}.{self.first_name}  {self.last_name}")
 
 
 class Results(models.Model):

@@ -8,6 +8,11 @@ from MyApp.forms import UserCreationForm
 def index(request):
     return render(request, 'index.html')
 
+#'@login_required
+#def profile(request):
+#    return render(request, "user_profile.html")
+
+
 
 def redirect_index(request):
     __doc__ = '''When this function is called, it redirects user to index page.'''

@@ -8,8 +8,8 @@ from django.db.models.signals import post_save
 
 
 class UserProfileModel(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
-    # ID = models.AutoField(primary_key=True)
+    #user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
+    ID = models.AutoField(primary_key=True)
 
     class Memberships(models.TextChoices):
         PATIENT = 'L1', 'Patient'
@@ -43,7 +43,9 @@ class UserProfileModel(models.Model):
 
     def full_name(self):
         return str(
-            f"{self.first_name}{' ' + self.middle_name if not self.middle_name is None else ''} {self.last_name}")
+            f"{self.first_name}{' ' + self.middle_name if self.middle_name is None else ''} {self.last_name}")
+
+    USERNAME_FIELD = id
 
     def __str__(self):
         return str(f"{self.user.id}.{self.first_name}  {self.last_name}")

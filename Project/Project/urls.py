@@ -22,7 +22,7 @@ urlpatterns = [
     path('', v1.index),
     path('index', v1.index, name='index'),
     path("accounts/", include("django.contrib.auth.urls")),
-    path('register/', v1.register, name='register'),
+    path('accounts/register/', v1.register, name='register'),
 ]
 
 '''

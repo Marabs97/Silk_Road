@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84d7a2fb-6847-4130-9e97-a1055b7b912c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Project/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/templates/registration/password_reset_complete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/templates/registration/password_reset_confirm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/templates/registration/password_reset_done.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/templates/registration/password_reset_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/templates/registration/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/MyApp/migrations/0002_alter_results_options_alter_userprofilemodel_options.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/MyApp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/MyApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/MyApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Project/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +40,12 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/se7enpcir/Documents/GitHub/Silk_Road/Project/templates",
+    "last_opened_file_path": "E:/Web Projects/iBio WebProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -76,6 +73,7 @@
       <workItem from="1674497548721" duration="1150000" />
       <workItem from="1674551915830" duration="1767000" />
       <workItem from="1674553733910" duration="2938000" />
+      <workItem from="1674662841930" duration="3572000" />
     </task>
     <servers />
   </component>

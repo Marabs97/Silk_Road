@@ -9,11 +9,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/MyApp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/MyApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/MyApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Project/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +52,11 @@
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\templates\registration" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Git\Silk_Road\Project\templates" />
+      <recent name="E:\Git\Silk_Road\Project\templates\registration" />
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\templates" />
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\templates\registration" />
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\MyApp" />
-      <recent name="E:\Git\Silk_Road\Project" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -73,7 +72,7 @@
       <workItem from="1674497548721" duration="1150000" />
       <workItem from="1674551915830" duration="1767000" />
       <workItem from="1674553733910" duration="2938000" />
-      <workItem from="1674662841930" duration="3572000" />
+      <workItem from="1674662841930" duration="5511000" />
     </task>
     <servers />
   </component>

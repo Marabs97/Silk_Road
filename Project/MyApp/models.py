@@ -8,8 +8,8 @@ from django.db.models.signals import post_save
 
 
 class UserProfileModel(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
-    ID1 = models.IntegerField(unique=True)
+    #user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
+    ID = models.AutoField(primary_key=True)
 
     class Memberships(models.TextChoices):
         PATIENT = 'L1', 'Patient'
@@ -24,7 +24,7 @@ class UserProfileModel(models.Model):
     # portfolio_site = models.URLField(blank=True)
     phone_number = models.CharField(max_length=14, unique=True)
     email = models.EmailField(blank=False, unique=True)
-    #password = models.CharField(max_length=16)
+    password = models.CharField(max_length=16)
 
     access_level = models.CharField(max_length=3, choices=Memberships.choices, default=Memberships.PATIENT)
     # record_history = models.ForeignKey('Results', on_delete=models.CASCADE)
@@ -38,17 +38,17 @@ class UserProfileModel(models.Model):
     REQUIRED_FIELDS = ['first_name', 'last_name', 'phone_number', 'email', 'password']
 
     class Meta:
-        verbose_name_plural = "User Profiles"
-        ordering = ['access_level', 'last_name']
+        verbose_name_plural = "List of Members"
+        ordering = ['last_name']
 
     def full_name(self):
         return str(
             f"{self.first_name}{' ' + self.middle_name if self.middle_name is None else ''} {self.last_name}")
 
-    #USERNAME_FIELD = ID
+    USERNAME_FIELD = id
 
     def __str__(self):
-        return str(f"{self.ID1}.{self.first_name}  {self.last_name} access level: {self.access_level}")
+        return str(f"{self.user.id}.{self.first_name}  {self.last_name}")
 
 
 class Results(models.Model):
@@ -75,10 +75,6 @@ class Results(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     # Requires a ForeignKey to entered symptoms
-
-    class Meta:
-        verbose_name_plural = "reports"
-        ordering = ['report_ID']
 
     def __str__(self):
         return str(f"report {self.report_ID}")

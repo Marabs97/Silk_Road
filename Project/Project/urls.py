@@ -20,9 +20,14 @@ from MyApp import views as v1
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', v1.index),
-    path('index', v1.index, name='index'),
-    path("accounts/", include("django.contrib.auth.urls")),
-    path('accounts/register/', v1.register, name='register'),
+    path('home', v1.index, name='home'),
+    #path('accounts/register/', v1.register, name='register'),
+
+    path('polls/', include('polls.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    #path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('profile/<username>', views.profile, name='profile'),
 ]
 
 '''

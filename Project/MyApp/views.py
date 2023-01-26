@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
+# from getSymptoms import *
 
 # Create your views here.
 

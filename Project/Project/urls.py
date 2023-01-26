@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from MyApp import views as v1
-from MyApp.accounts import urls as accounts_urls
+#from MyApp.accounts import urls as accounts_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,7 +25,7 @@ urlpatterns = [
     #path('accounts/register/', v1.register, name='register'),
 
     #path('polls/', include('polls.urls')),
-    path('accounts/', include(accounts_urls)),
+    #path('accounts/', include(accounts_urls)),
     path('accounts/', include('django.contrib.auth.urls')),
     #path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('profile/<username>', v1.profile_view, name='profile_view'),

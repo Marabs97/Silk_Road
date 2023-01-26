@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84d7a2fb-6847-4130-9e97-a1055b7b912c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Project/MyApp/migrations/0002_alter_results_options_alter_userprofilemodel_options.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/MyApp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/MyApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Project/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +32,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/Web Projects/iBio WebProject",
+    "last_opened_file_path": "E:/Git/Silk_Road/Project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,11 +46,10 @@
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\templates\registration" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Git\Silk_Road\Project\templates" />
-      <recent name="E:\Git\Silk_Road\Project\templates\registration" />
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\templates" />
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\templates\registration" />
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\MyApp" />
+      <recent name="E:\Git\Silk_Road\Project" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -72,7 +65,8 @@
       <workItem from="1674497548721" duration="1150000" />
       <workItem from="1674551915830" duration="1767000" />
       <workItem from="1674553733910" duration="2938000" />
-      <workItem from="1674662841930" duration="5511000" />
+      <workItem from="1674662841930" duration="3572000" />
+      <workItem from="1674767320506" duration="20000" />
     </task>
     <servers />
   </component>

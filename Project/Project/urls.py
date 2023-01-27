@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from MyApp import views as v1
 #from MyApp.accounts import urls as accounts_urls
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,7 +33,7 @@ urlpatterns = [
     #path('', TemplateView.as_view(template_name='home.html'), name='home'),
     #path('profile/<username>', v1.profile_view, name='profile_view'),
     path('profile', v1.profile_view, name='profile_view'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 '''
 accounts/login/ [name='login']

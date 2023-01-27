@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,7 +15,8 @@
       {% endblock %}
     </title>
   </head>
-  <body  id="bg" style="background-image: url('{% static humanbody.webp %}');">
+  <body  id="bg" style="background-image: url({% static "img/humanbody.png" %});">
+    <img src="../Static/img/humanbody.png" alt="My image">
     <nav class="navbar bg-info" data-bs-theme="info">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Find It Throught Silk Road!</a>

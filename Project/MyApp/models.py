@@ -1,20 +1,24 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.conf import settings
 from django.db.models.signals import post_save
-
+from django.utils.translation import gettext_lazy as _
+from .managers import CustomUserManager
+from django.utils import timezone
 
 # Create your models here.
 
 
-class UserProfileModel(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
-    ID1 = models.IntegerField(unique=True)
+class UserProfileModel(AbstractBaseUser, PermissionsMixin):
+    #user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
+    username = models.CharField(_("username"), max_length=50, unique=True, blank=False, null=False)
+
+    #ID1 = models.PositiveSmallIntegerField(auto_created=True, unique=True)
 
     class Memberships(models.TextChoices):
-        PATIENT = 'L1', 'Patient'
-        DOCTOR = 'L2', 'Doctor'
-        COMPANY = 'L3', 'Company'
+        PATIENT = 'L1', _('Patient')
+        DOCTOR = 'L2', _('Doctor')
+        COMPANY = 'L3', _('Company')
 
     first_name = models.CharField(max_length=30)
     middle_name = models.CharField(max_length=30, blank=True, null=True)
@@ -32,10 +36,24 @@ class UserProfileModel(models.Model):
     # hidden, number of times that a user can use the website
     tokens = models.PositiveSmallIntegerField(default=2)
 
+    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    date_joined = models.DateTimeField(default=timezone.now)
+
     # Unique Identifier to be used for One-Step Login
 
-    # EMAIL_FIELD = email
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'phone_number', 'email', 'password']
+    uid = models.UUIDField(
+        default=None,
+        blank=True,
+        null=True,
+        unique=True,
+    )
+
+    USERNAME_FIELD = 'username'
+    EMAIL_FIELD = 'email'
+    REQUIRED_FIELDS = ['email', 'phone_number']
+
+    objects = CustomUserManager()
 
     class Meta:
         verbose_name_plural = "User Profiles"
@@ -45,10 +63,8 @@ class UserProfileModel(models.Model):
         return str(
             f"{self.first_name}{' ' + self.middle_name if self.middle_name is None else ''} {self.last_name}")
 
-    #USERNAME_FIELD = ID
-
     def __str__(self):
-        return str(f"{self.ID1}.{self.first_name}  {self.last_name} access level: {self.access_level}")
+        return str(f"{self.username}.{self.first_name}  {self.last_name} access level: {self.access_level}")
 
 
 class Results(models.Model):

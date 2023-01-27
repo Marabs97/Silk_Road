@@ -32,14 +32,14 @@ def redirect_index(request):
 
 
 class SignUpView(CreateView):
-    form_class = UserCreationForm
+    form_class = NewUserForm
     success_url = reverse_lazy("login")
     template_name = "registration/signup.html"
 
 
 @login_required
-def profile_view(request, username):
-    user = get_object_or_404(UserProfileModel, user=username)
+def profile_view(request):
+    user = get_object_or_404(UserProfileModel, username=request.user.username)
     #full_name = user.full_name
     #tokens = user.tokens
     return render(request, template_name='profile.html',

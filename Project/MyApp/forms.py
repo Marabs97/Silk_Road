@@ -19,3 +19,12 @@ class NewUserForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+'''
+class UserUpdateForm(forms.ModelForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = UserProfileModel
+        fields = ['first_name', 'last_name', 'email', 'description']
+'''

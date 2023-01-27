@@ -22,13 +22,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', v1.index),
     path('home', v1.index, name='home'),
-    #path('accounts/register/', v1.register, name='register'),
+    #path('register', v1.register, name='register'),
 
     #path('polls/', include('polls.urls')),
     #path('accounts/', include(accounts_urls)),
     path('accounts/', include('django.contrib.auth.urls')),
+    path("signup/", v1.SignUpView.as_view(), name="signup"),
     #path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('profile/<username>', v1.profile_view, name='profile_view'),
+    #path('profile', v1.profile_view, name='profile_view'),
 ]
 
 '''

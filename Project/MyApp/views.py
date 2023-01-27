@@ -3,10 +3,16 @@ from django.http import HttpResponseRedirect, HttpResponse
 from .models import UserProfileModel
 from .forms import NewUserForm
 from django.contrib import messages
-from django.views import generic
+
+from django.views.generic.detail import DetailView
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.views.generic.list import ListView, MultipleObjectMixin
+
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 # from getSymptoms import *
+from django.contrib.auth.forms import UserCreationForm
+from django.views.generic import CreateView
 
 # Create your views here.
 
@@ -25,13 +31,33 @@ def redirect_index(request):
     return HttpResponseRedirect('home')
 
 
+class SignUpView(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy("login")
+    template_name = "registration/signup.html"
+
+
 @login_required
 def profile_view(request, username):
-    username = UserProfileModel.user
-    full_name = UserProfileModel.full_name
-    tokens = UserProfileModel.tokens
+    user = get_object_or_404(UserProfileModel, user=username)
+    #full_name = user.full_name
+    #tokens = user.tokens
     return render(request, template_name='profile.html',
-                  context={'full_name': full_name, 'tokens': tokens})
+                  context={'user': user})
+
+
+@login_required
+def reports_view(request):
+    user = get_object_or_404(UserProfileModel)
+
+
+@login_required
+class AccountInformationView(UserPassesTestMixin, DetailView):
+    model = UserProfileModel
+    template_name = 'profile.html'
+
+    def get_object(self, queryset=None):
+        return get_object_or_404(UserProfileModel, username=self.kwargs.get('user'), pk=self.request.user.pk)
 
 
 '''

@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84d7a2fb-6847-4130-9e97-a1055b7b912c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Project/Static/humanbody.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/base.html" afterDir="false" />
     </list>
@@ -33,7 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/se7enpcir",
+    "last_opened_file_path": "C:/Users/se7enpcir/Documents/GitHub/Silk_Road/Project/Static",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -43,10 +44,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\Static" />
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\templates" />
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\templates\registration" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project" />
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\templates" />
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\templates\registration" />
       <recent name="C:\Users\se7enpcir\Documents\GitHub\Silk_Road\Project\MyApp" />

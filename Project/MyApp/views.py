@@ -32,7 +32,7 @@ def redirect_index(request):
 
 
 class SignUpView(CreateView):
-    form_class = UserCreationForm
+    form_class = NewUserForm
     success_url = reverse_lazy("login")
     template_name = "registration/signup.html"
 

@@ -38,8 +38,8 @@ class SignUpView(CreateView):
 
 
 @login_required
-def profile_view(request, username):
-    user = get_object_or_404(UserProfileModel, user=username)
+def profile_view(request):
+    user = get_object_or_404(UserProfileModel, username=request.user.username)
     #full_name = user.full_name
     #tokens = user.tokens
     return render(request, template_name='profile.html',

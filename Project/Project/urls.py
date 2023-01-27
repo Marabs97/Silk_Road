@@ -29,8 +29,8 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path("signup/", v1.SignUpView.as_view(), name="signup"),
     #path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('profile/<username>', v1.profile_view, name='profile_view'),
-    #path('profile', v1.profile_view, name='profile_view'),
+    #path('profile/<username>', v1.profile_view, name='profile_view'),
+    path('profile', v1.profile_view, name='profile_view'),
 ]
 
 '''

@@ -3,13 +3,36 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
+
   <h2>Sign up</h2>
   <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
+    <div class="mb-3">
+
+      <input type="email" class="form-control" placeholder="Email Address" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div
+    </div>
+      <div class="mb-3">
+
+    <input type="email" class="form-control" placeholder="Full name">
+    <div
+  </div>
+  <div class="mb-3">
+
+    <input type="password" class="form-control" placeholder="Password" id="exampleInputPassword1" aria-describedby="passwordHelpInline">
+    <div class="mb-3">
+      <input type="password" class="form-control" placeholder="Password Confirmation" id="exampleInputPassword1" aria-describedby="passwordHelpInline">
+
+      <div
+    <div class="mb-3">
+      <input type="number" class="form-control"  placeholder="Phone Number" >
+<br/>
+      <br/>
+      <button type="submit" class="btn btn-outline-primary">Sign Up</button> <p> Already registered? <a href="../accounts/login/">Login </a> </p>
+
   </form>
-    <p> Already registered? <a href="../accounts/login/">Login </a> </p>
+
+
 {% endblock %}
 
 

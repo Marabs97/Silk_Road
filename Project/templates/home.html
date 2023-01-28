@@ -3,6 +3,7 @@
 
 {% block title %} Home {% endblock %}
 
+{% block content %}
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
@@ -41,7 +42,7 @@
     </div>
   </div>
 </div>
-{% block content %}
+
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
     {# Your Full name is {{ user.first_name }} {{ user.last_name }} #}

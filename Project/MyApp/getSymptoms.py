@@ -32,7 +32,7 @@ def feed_back_choice(input_info_from_user): # input: skin, pain
         for symptom in symptom_list:
             if is_in(symptom, input_sym) == 0:
                 feedback_choice.append(symptom)
-    return feedback_choice
+    return feedback_choice, symptom_list
 
 
 def get_symptoms(input_choices_from_user, symptom_list):
@@ -48,9 +48,14 @@ def get_symptoms(input_choices_from_user, symptom_list):
         for column in final_input.columns:
             if i == column:
                 final_input[column] = 1
+    symptom = []
+    for name in symptom_list:
+        symptom.append(name.replace(' ', '_'))
+    final_input.columns = symptom
     return final_input
 
 
-
-
+### Using of the functions
+# feedback_choice, symptom_list = feed_back_choice(input_info_from_user)
+# final_input = get_symptoms(input_choices_from_user, symptom_list)
 

@@ -121,3 +121,29 @@ class Supervisor(models.Model):
 
     def __str__(self):
         return str(f"{self.name} supervising profile")
+
+
+### This is CORRECTED input from user, done by dynamic search in views
+### Replace This with your Model(s)
+#TODO Replace this Model with ML models to do the calculations and saves the results in ReportsModel
+class InputModel(models.Model):
+    user = models.ForeignKey(UserProfileModel, on_delete=models.CASCADE)
+
+    # your input should be saved for data analysis processes and later on qualifications
+    symptoms_list = models.TextField(max_length=500)
+    date = models.DateTimeField(default=timezone.now)
+
+    # your ML model goes here
+    sample_output = 'symptoms_list'
+
+
+    # this function saves the output in Reports Model
+    def save(self, *args, **kwargs):
+        output = str((self.sample_output, self.symptoms_list, "This is a text"))
+        return Results.objects.create(result=output, created_by=self.user)
+
+
+    def __str__(self):
+        return str(self.date)
+
+###

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %} Reports {% endblock %}
+
+{% block body %}
+<p> Here are your history of records </p>
+    {% for item in reports_list %}
+        <p>{{ item }}</p>
+    {% endfor %}
+{% endblock %}

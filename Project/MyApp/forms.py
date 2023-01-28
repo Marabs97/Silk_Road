@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import UserProfileModel
+from .models import UserProfileModel, InputModel
 from django.core.exceptions import ValidationError
 
 
@@ -56,4 +56,10 @@ class UpdateProfileForm(UserChangeForm):
     class Meta:
         model = UserProfileModel
         fields = ("username", "email", "phone_number", "gender", "first_name", "middle_name", "last_name", "tokens", "access_level", "uid")
+
+
+class InputSymptomsForm(forms.ModelForm):
+    class Meta:
+        model = InputModel
+        fields = ['symptoms_list']
 

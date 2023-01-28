@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
-from .models import UserProfileModel
+from .models import UserProfileModel, Results
 from .forms import NewUserForm
 from django.contrib import messages
 
@@ -48,8 +48,10 @@ def profile_view(request):
 
 @login_required
 def reports_view(request):
-    user = get_object_or_404(UserProfileModel)
-
+    user = get_object_or_404(UserProfileModel, username=request.user.username)
+    reports_list = Results.objects.filter(created_by=user)
+    return render(request, template_name="reports.html",
+                  context={"reports_list": reports_list})
 
 @login_required
 class AccountInformationView(UserPassesTestMixin, DetailView):

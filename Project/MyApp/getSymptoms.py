@@ -9,7 +9,8 @@ def is_in(full_str, sub_str):
         return -1
 
 
-def feed_back_choice(input_info_from_user):
+def feed_back_choice(input_info_from_user): # input: skin, pain
+
     """
     get the input from users and give them possible choices to choose of symptoms.
     :param input_info_from_user: user type the keywords of symptoms in the blank (type: list,separate with comma)

@@ -8,14 +8,17 @@ from sklearn.metrics import f1_score
 from sklearn.metrics import recall_score
 import graphviz
 import random
+
 #TODO change the level
-logging.basicConfig(filename='machineLearningModel.loging',level=logging.INFO)
+logging.basicConfig(filename='machineLearningModel.loging', level=logging.INFO)
 import numpy as np
+
+
 def makeTheTree():
     input_file = "Training.csv"
     # comma delimited is the default
 
-    df_train = pd.read_csv(input_file, header = 0)
+    df_train = pd.read_csv(input_file, header=0)
     #df_train.isna().sum().sum()
 
     df_train = df_train.fillna(0)
@@ -48,11 +51,14 @@ def makeTheTree():
     logging.info('recall score Macro: ',recall_score(y_tests,clf.predict(X_tests),average='macro'))
 
     return clf
+
+
 def findDesesFromSymptom(Symptoms):
     clf = makeTheTree()
-    return clf.predict(pd.DataFrame (Symptoms))
+    return clf.predict(pd.DataFrame(Symptoms)) # returns disease
 
 # Might be helpful for test #
+'''
 l = {}
 c = [1,0]
 for a in range(132):
@@ -64,3 +70,4 @@ logging.info(data)
 logging.info(findDesesFromSymptom(data)[0])
 
 logging.shutdown()
+'''

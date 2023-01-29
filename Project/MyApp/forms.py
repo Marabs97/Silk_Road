@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import UserProfileModel, InputModel
+from .models import UserProfileModel, InputModel, TempInputModel
 from django.core.exceptions import ValidationError
 
 
@@ -64,3 +64,16 @@ class InputSymptomsForm(forms.ModelForm):
         model = InputModel
         fields = ['symptoms_list', 'user']
 
+
+class TempInputForm(forms.ModelForm):
+
+    #user = forms.ModelChoiceField(label="", queryset=TempInputModel.objects.all(), widget=forms.HiddenInput())
+
+    class Meta:
+        model = TempInputModel
+        fields = ['temp_input', 'user']
+        #widgets = {'user': forms.HiddenInput()}
+
+
+class TempChoiceForm(forms.ModelForm):
+    choices = forms.ChoiceField()

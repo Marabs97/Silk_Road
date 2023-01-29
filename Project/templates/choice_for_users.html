@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Choice</title>
-</head>
-<body>
-    <h1>Please select and type from the following options.</h1>
-    <h2>(symptoms from databases......TODO)</h2>
-    <h3>(Please type your symptoms and separate them with comma)</h3>
-    <form method="get" action="/symptoms/choice">
-        <input type="text" name="symptoms_choice_user">
-        <input type="submit" value="search">
-    </form>
 
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} input page {% endblock %}
+
+{% block content %}
+
+ <form method="post">
+ <p>Please input symptoms {{ user.first_name }} {{ user.last_name }}</p>
+   {% csrf_token %}
+    <div class="mb-3">
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-outline-primary">submit</button>
+    </div>
+
+ </form>
+
+{% endblock %}

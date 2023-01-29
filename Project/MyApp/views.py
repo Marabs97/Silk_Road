@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
-from .models import UserProfileModel, Results
-from .forms import NewUserForm, InputSymptomsForm
+from .models import UserProfileModel, Results, TempInputModel
+from .forms import NewUserForm, InputSymptomsForm, TempInputForm, TempChoiceForm
 from django.contrib import messages
 
 from django.views.generic.detail import DetailView
@@ -13,6 +13,8 @@ from django.contrib.auth.decorators import login_required
 # from getSymptoms import *
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import CreateView
+import pandas as pd
+import operator as op
 
 # Create your views here.
 
@@ -40,8 +42,8 @@ class SignUpView(CreateView):
 @login_required
 def profile_view(request):
     user = get_object_or_404(UserProfileModel, username=request.user.username)
-    #full_name = user.full_name
-    #tokens = user.tokens
+    # full_name = user.full_name
+    # tokens = user.tokens
     return render(request, template_name='profile.html',
                   context={'user': user})
 
@@ -52,6 +54,7 @@ def reports_view(request):
     reports_list = Results.objects.filter(created_by=user)
     return render(request, template_name="reports.html",
                   context={"reports_list": reports_list})
+
 
 '''
 @login_required
@@ -65,15 +68,91 @@ class AccountInformationView(UserPassesTestMixin, DetailView):
 
 
 ### Dynamic search is bidirectional
-#TODO Modify this function for searching
+# TODO Modify this function for searching
 @login_required
 def input_symptoms_view(request):
+    user = get_object_or_404(UserProfileModel, username=request.user.username)
+
+    tk = user.tokens
+
+    # create a form instance and populate it with data from the request:
+    form = TempInputForm(request.POST or None)
+    # create the django object in memory, but don't save to the database
+
+    if tk >= 1:
+        # temporary saves dirty input
+        if request.method == 'POST':
+
+            # check whether it's valid:
+            if form.is_valid():
+                obj = form.save()
+                obj.user = request.user
+                obj.save()
+
+                # process the data in form.cleaned_data as required
+                # ...
+
+                UserProfileModel.objects.filter(username=request.user.username).update(tokens=(tk - 1))
+                # redirect to a new URL:
+                return HttpResponseRedirect('/choice_for_users')
+
+
+        # if a GET (or any other method) we'll create a blank form
+        else:
+            form = TempInputForm()
+    else:
+        # Better be a error page
+        return HttpResponseRedirect('/home')
+
+    template_name = 'input_symptoms.html'
+    context = {'form': form}
+    return render(request, template_name, context)
+
+
+
+
+
+@login_required
+def PassCleanData_view(request):
+
+    input_info_from_user = get_object_or_404(TempInputModel, user=request.user.id)
+
+    def is_in(full_str, sub_str):
+        if op.contains(full_str, sub_str):
+            return 0
+        else:
+            return -1
+
+    def feed_back_choice(input_info_from_user):  # input: skin, pain
+
+        """
+        get the input from users and give them possible choices to choose of symptoms.
+        :param input_info_from_user: user type the keywords of symptoms in the blank (type: list,separate with comma)
+        :return: possible/suggested choices of symptoms from the database.
+        """
+        testing_file = pd.read_csv("Testing.csv")
+        testing_file = testing_file.drop(['prognosis'], axis=1)
+        symptoms = list(testing_file.columns)
+
+        symptom_list = []
+        for name in symptoms:
+            symptom_list.append(name.replace('_', ' '))
+
+        input_list = input_info_from_user.split(',')
+
+        # provide possible choices of symptoms to the users to choose.
+        feedback_choice = []
+        for input_sym in input_list:
+            for symptom in symptom_list:
+                if is_in(symptom, input_sym) == 0:
+                    feedback_choice.append(symptom)
+        return feedback_choice, symptom_list
+
 
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        user = get_object_or_404(UserProfileModel, username=request.user.username)
         # create a form instance and populate it with data from the request:
-        form = InputSymptomsForm(request.POST or None)
+        form = TempChoiceForm(request.POST or None)
         # check whether it's valid:
         if form.is_valid():
             form.save()
@@ -84,8 +163,8 @@ def input_symptoms_view(request):
 
     # if a GET (or any other method) we'll create a blank form
     else:
-        form = InputSymptomsForm()
-    template_name = 'input_symptoms.html'
+        form = TempChoiceForm()
+    template_name = 'choice_for_users.html'
     context = {'form': form}
     return render(request, template_name, context)
 

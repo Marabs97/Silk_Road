@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from MyApp.models import UserProfileModel, Results, Supervisor, InputModel
+from MyApp.models import UserProfileModel, Results, Supervisor, InputModel, TempInputModel
 
 from MyApp.forms import NewUserForm, UpdateProfileForm
 from django.contrib.auth.models import Group
@@ -34,5 +34,6 @@ admin.site.register(UserProfileModel, CustomUserAdmin)
 admin.site.register(Results)
 admin.site.register(Supervisor)
 admin.site.register(InputModel)
+admin.site.register(TempInputModel)
 
 admin.site.unregister(Group)

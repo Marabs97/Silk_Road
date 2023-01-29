@@ -157,8 +157,22 @@ class InputModel(models.Model):
         output = str((self.sample_output, self.symptoms_list, "This is a text"))
         return Results.objects.create(input=output, created_by=self.user)
 
-
     def __str__(self):
         return str(self.date)
 
-###
+
+class TempInput(models.Model):
+    ID = models.AutoField(primary_key=True, unique=True)
+    temp_input = models.TextField(max_length=200)
+
+    def __str__(self):
+        return str(self.ID)
+
+
+class TempInputModel(models.Model):
+    user = models.ForeignKey(UserProfileModel, on_delete=models.CASCADE)
+
+    temp_input = models.TextField(max_length=200)
+
+    def __str__(self):
+        return str(timezone.now())

@@ -59,7 +59,8 @@ class UpdateProfileForm(UserChangeForm):
 
 
 class InputSymptomsForm(forms.ModelForm):
+
     class Meta:
         model = InputModel
-        fields = ['symptoms_list']
+        fields = ['symptoms_list', 'user']
 

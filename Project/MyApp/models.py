@@ -84,7 +84,7 @@ class Results(models.Model):
     '''
 
     report_ID = models.AutoField(primary_key=True)
-
+    input = models.TextField(default="Default")
     result = models.TextField()
 
     created_by = models.ForeignKey(UserProfileModel, on_delete=models.CASCADE)
@@ -140,7 +140,7 @@ class InputModel(models.Model):
     # this function saves the output in Reports Model
     def save(self, *args, **kwargs):
         output = str((self.sample_output, self.symptoms_list, "This is a text"))
-        return Results.objects.create(result=output, created_by=self.user)
+        return Results.objects.create(input=output, created_by=self.user)
 
 
     def __str__(self):

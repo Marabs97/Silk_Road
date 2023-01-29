@@ -47,8 +47,7 @@ def profile_view(request):
 
 
 @login_required
-def reports_view(request, symptoms):
-    sym = request.user.username
+def reports_view(request):
     user = get_object_or_404(UserProfileModel, username=request.user.username)
     reports_list = Results.objects.filter(created_by=user)
     return render(request, template_name="reports.html",
@@ -69,8 +68,10 @@ class AccountInformationView(UserPassesTestMixin, DetailView):
 #TODO Modify this function for searching
 @login_required
 def input_symptoms_view(request):
+
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
+        user = get_object_or_404(UserProfileModel, username=request.user.username)
         # create a form instance and populate it with data from the request:
         form = InputSymptomsForm(request.POST or None)
         # check whether it's valid:
@@ -79,7 +80,7 @@ def input_symptoms_view(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            return HttpResponseRedirect('/input-symptoms/')
+            return HttpResponseRedirect('/reports')
 
     # if a GET (or any other method) we'll create a blank form
     else:

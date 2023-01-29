@@ -85,7 +85,7 @@ def input_symptoms_view(request):
 
             # check whether it's valid:
             if form.is_valid():
-                obj = form.save()
+                obj = form.save(commit=False)
                 obj.user = request.user
                 obj.save()
 
@@ -146,26 +146,16 @@ def PassCleanData_view(request):
             for symptom in symptom_list:
                 if is_in(symptom, input_sym) == 0:
                     feedback_choice.append(symptom)
-        return feedback_choice, symptom_list
+        return feedback_choice
 
 
     # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = TempChoiceForm(request.POST or None)
-        # check whether it's valid:
-        if form.is_valid():
-            form.save()
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/reports')
+
 
     # if a GET (or any other method) we'll create a blank form
-    else:
-        form = TempChoiceForm()
+
     template_name = 'choice_for_users.html'
-    context = {'form': form}
+    context = {'feed_back_choice': feed_back_choice}
     return render(request, template_name, context)
 
 

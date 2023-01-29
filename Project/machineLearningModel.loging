@@ -1004,3 +1004,91 @@ ValueError: ModelForm has no model class specified.
 INFO:django.utils.autoreload:E:\Git\Silk_Road\Project\MyApp\forms.py changed, reloading.
 INFO:django.utils.autoreload:Watching for file changes with StatReloader
 INFO:django.utils.autoreload:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:Watching for file changes with StatReloader
+ERROR:django.request:Internal Server Error: /choice_for_users
+Traceback (most recent call last):
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Git\Silk_Road\Project\MyApp\views.py", line 118, in PassCleanData_view
+    input_info_from_user = get_object_or_404(TempInputModel, user=request.user.id)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\db\models\query.py", line 653, in get
+    raise self.model.MultipleObjectsReturned(
+MyApp.models.TempInputModel.MultipleObjectsReturned: get() returned more than one TempInputModel -- it returned 6!
+INFO:django.utils.autoreload:E:\Git\Silk_Road\Project\MyApp\forms.py changed, reloading.
+INFO:django.utils.autoreload:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:E:\Git\Silk_Road\Project\MyApp\views.py changed, reloading.
+INFO:django.utils.autoreload:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:E:\Git\Silk_Road\Project\MyApp\forms.py changed, reloading.
+INFO:django.utils.autoreload:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:E:\Git\Silk_Road\Project\MyApp\views.py changed, reloading.
+INFO:django.utils.autoreload:Watching for file changes with StatReloader
+ERROR:django.request:Internal Server Error: /choice_for_users
+Traceback (most recent call last):
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Git\Silk_Road\Project\MyApp\views.py", line 118, in PassCleanData_view
+    input_info_from_user = get_object_or_404(TempInputModel, user=request.user.id)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\db\models\query.py", line 653, in get
+    raise self.model.MultipleObjectsReturned(
+MyApp.models.TempInputModel.MultipleObjectsReturned: get() returned more than one TempInputModel -- it returned 7!
+ERROR:django.request:Internal Server Error: /choice_for_users
+Traceback (most recent call last):
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Git\Silk_Road\Project\MyApp\views.py", line 166, in PassCleanData_view
+    form = TempChoiceForm()
+           ^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\forms\models.py", line 356, in __init__
+    raise ValueError("ModelForm has no model class specified.")
+ValueError: ModelForm has no model class specified.
+INFO:django.utils.autoreload:E:\Git\Silk_Road\Project\MyApp\views.py changed, reloading.
+INFO:django.utils.autoreload:Watching for file changes with StatReloader
+ERROR:django.request:Internal Server Error: /choice_for_users
+Traceback (most recent call last):
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Git\Silk_Road\Project\MyApp\views.py", line 118, in PassCleanData_view
+    input_info_from_user = get_object_or_404(TempInputModel, user=request.user.id)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Germany\GEORG-AUGUST Universitat Gottingen\WiSe22\B.inf.1842\Project\venv\Lib\site-packages\django\db\models\query.py", line 653, in get
+    raise self.model.MultipleObjectsReturned(
+MyApp.models.TempInputModel.MultipleObjectsReturned: get() returned more than one TempInputModel -- it returned 2!

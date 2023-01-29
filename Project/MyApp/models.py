@@ -5,7 +5,9 @@ from django.db.models.signals import post_save
 from django.utils.translation import gettext_lazy as _
 from .managers import CustomUserManager
 from django.utils import timezone
-
+import pandas as pd
+import MyApp.machineLearningModel as ml
+import random
 # Create your models here.
 
 
@@ -133,8 +135,21 @@ class InputModel(models.Model):
     symptoms_list = models.TextField(max_length=500)
     date = models.DateTimeField(default=timezone.now)
 
+    # symptoms : dataframe
+    """
+    l = {}
+    c = [1, 0]
+    for a in range(132):
+        b = random.choices([1, 0], [1, 3])
+        l.update({str(a): b})
+    sample_clean_data = pd.DataFrame(data=l, index=[1])
+    """
+
+    #sample_clean = pd.DataFrame()
+
     # your ML model goes here
     sample_output = 'symptoms_list'
+    #diseases = ml.findDesesFromSymptom(sample_clean)
 
 
     # this function saves the output in Reports Model

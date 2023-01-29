@@ -9,11 +9,7 @@
       <change beforePath="$PROJECT_DIR$/Project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Project/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/templates/input_symptoms.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/input_symptoms.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/registration/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/templates/reports.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/reports.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

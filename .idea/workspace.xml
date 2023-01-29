@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84d7a2fb-6847-4130-9e97-a1055b7b912c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Project/MyApp/migrations/0006_results_input.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/MyApp/migrations/0007_alter_results_input.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/MyApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/MyApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/MyApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Project/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/templates/input_symptoms.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/input_symptoms.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/registration/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/templates/reports.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/reports.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

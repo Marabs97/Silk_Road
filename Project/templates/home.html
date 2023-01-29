@@ -4,10 +4,13 @@
 {% block title %} Home {% endblock %}
 
 {% block content %}
-<div class="accordion accordion-flush" id="accordionFlushExample">
+
+<div class="card">
+  <div class="card-body">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
         Why to choose Silk Road
       </button>
     </h2>
@@ -27,7 +30,7 @@
     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
 
       <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> In a nutshell, it has three parts; the back-end which deals with database and the things you cant see, the front-end which allows you to enjoy the user friendly scheme of the website and finally the Machine learning part which helps with the disease prediction of your symptoms input.
+        <strong>This is the second item's accordion body.</strong> In a nutshell, it has three parts; the back-end which deals with database and the things you can't see, the front-end which allows you to enjoy the user friendly scheme of the website and finally the machine learning part which helps with the disease prediction of your symptoms input.
       </div>
     </div>
   </div>
@@ -39,12 +42,12 @@
     </h2>
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
-        <strong>Simple!</strong> Just register in the website and tell us that if you are a patient, Md student or a Docter.
+        <strong>Simple!</strong> Just register in the website and tell us if you are a patient, Md student or a Doctor.
       </div>
     </div>
   </div>
+  </div>
 </div>
-
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
     {# Your Full name is {{ user.first_name }} {{ user.last_name }} #}
@@ -52,6 +55,10 @@
   <p><a href="{% url 'logout' %}">Log Out</a></p>
   <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
 {% else %}
-  <p>You are not logged in! please <a href="{% url 'login' %}">Log In</a> or <a href="{% url 'signup' %}">signup</a> :P <p>
+  <p>   You are not logged in! Please <a href="{% url 'login' %}">log In</a> or <a href="{% url 'signup' %}">signup</a> :P <p>
+
+</div>
+
+
 {% endif %}
 {% endblock %}

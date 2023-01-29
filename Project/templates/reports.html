@@ -1,13 +1,24 @@
 
-
+{% extends 'base.html' %}
 {% block title %} Reports {% endblock %}
 
-{% block body %}
-<p> Here are your history of records </p>
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <h2> Here are your history of records: </h2>
+      <br/>
     {% for item in reports_list %}
-        <p>date: {{ item.created_at }}</p>
-        <p>input: {{ item.input }}</p>
-        <p>result: {{ item.result }}</p>
+        <p>Date: {{item.created_at }}</p>
+        <p>Input:  {{ item.input }}</p>
+        <h6>Results:  {{ item.result }}</h6>
+      <div class="text-success">
+        <hr class="border border-danger border-2 opacity-50">
+      </div>
+      {% endfor %}
 
-    {% endfor %}
+  </div>
+</div>
+
+
+
 {% endblock %}

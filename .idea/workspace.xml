@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84d7a2fb-6847-4130-9e97-a1055b7b912c" name="Changes" comment="" />
+    <list default="true" id="84d7a2fb-6847-4130-9e97-a1055b7b912c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Project/GraphicalTree" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/MyApp/migrations/0008_tempinput.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/MyApp/migrations/0009_rename_tempinput_tempinput_temp_input.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/MyApp/migrations/0010_remove_tempinput_id_tempinput_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/MyApp/migrations/0011_alter_tempinput_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/MyApp/migrations/0012_tempinputmodel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/machineLearningModel.loging" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/.idea/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project/.idea/Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/MyApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/MyApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/MyApp/machine learning model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/machineLearningModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/MyApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/MyApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/MyApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/SymptomsApp/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/SymptomsApp/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/SymptomsApp/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/SymptomsApp/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/SymptomsApp/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/SymptomsApp/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/SymptomsApp/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Project/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/templates/choice_for_users.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/choice_for_users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Project/templates/profile.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

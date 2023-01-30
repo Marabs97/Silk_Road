@@ -87,12 +87,12 @@ class Results(models.Model):
     '''
 
     report_ID = models.AutoField(primary_key=True)
-    input = models.TextField(default="Default")
+    input = models.TextField(max_length=3000)
     result = models.TextField()
 
     created_by = models.ForeignKey(UserProfileModel, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-
+    hilfen = models.TextField(max_length=3000)
     # Requires a ForeignKey to entered symptoms
 
     class Meta:
@@ -126,54 +126,18 @@ class Supervisor(models.Model):
         return str(f"{self.name} supervising profile")
 
 
-### This is CORRECTED input from user, done by dynamic search in views
-### Replace This with your Model(s)
-#TODO Replace this Model with ML models to do the calculations and saves the results in ReportsModel
-class InputModel(models.Model):
-    user = models.ForeignKey(UserProfileModel, on_delete=models.CASCADE)
-
-    # your input should be saved for data analysis processes and later on qualifications
-    symptoms_list = models.TextField(max_length=500)
-    date = models.DateTimeField(default=timezone.now)
-    clean_input = models.TextField(max_length=300)
-
-
-
-    # symptoms : dataframe
-    """
-    l = {}
-    c = [1, 0]
-    for a in range(132):
-        b = random.choices([1, 0], [1, 3])
-        l.update({str(a): b})
-    sample_clean_data = pd.DataFrame(data=l, index=[1])
-    """
-
-    #sample_clean = pd.DataFrame()
-
-    # your ML model goes here
-    sample_output = 'symptoms_list'
-    #diseases = ml.findDesesFromSymptom(clean_input)
-
-
-    # this function saves the output in Reports Model
-    def save(self, *args, **kwargs):
-        output = str((self.sample_output, self.symptoms_list, "This is a text"))
-        return Results.objects.create(input=output, created_by=self.user)
-
-    def __str__(self):
-        return str(self.date)
-
-
 class TempInputModel2(models.Model):
     user = models.ForeignKey(UserProfileModel, on_delete=models.CASCADE)
 
     temp_choice_input = models.TextField(max_length=300)
     str_temp_choice = str(temp_choice_input)
-    symptom_list2 = models.TextField(max_length=300)
-    str_symptom2 = str(symptom_list2)
+    #list_temp_choice = str_temp_choice.split(',')
 
+    symptom_list2 = models.TextField(max_length=5000)
+    str_symptom2 = str(symptom_list2)
     list_symptom2 = str_symptom2.split(',')
+    l = [0 for i in range(133)]
+
 
     # calculate clean input
     clean_input = get_symptoms(str_temp_choice, list_symptom2)
@@ -183,7 +147,7 @@ class TempInputModel2(models.Model):
         output = self.clean_input
         #output = self.diseases
         #return InputModel.objects.create(clean_input=output, user=self.user)
-        return Results.objects.create(input=output, created_by=self.user)
+        return Results.objects.create(input=output, hilfen=self.list_symptom2, created_by=self.user)
 
     def __str__(self):
         return str(timezone.now())

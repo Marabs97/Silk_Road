@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
 from .models import UserProfileModel, Results, TempInputModel
-from .forms import NewUserForm, InputSymptomsForm, TempInputForm, TempChoiceForm
+from .forms import NewUserForm, TempInputForm, TempChoiceForm
 from django.contrib import messages
 
 from django.views.generic.detail import DetailView

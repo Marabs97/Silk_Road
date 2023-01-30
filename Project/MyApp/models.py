@@ -8,6 +8,7 @@ from django.utils import timezone
 import pandas as pd
 import MyApp.machineLearningModel as ml
 import random
+from MyApp.getSymptoms import feed_back_choice, get_symptoms
 # Create your models here.
 
 
@@ -134,6 +135,9 @@ class InputModel(models.Model):
     # your input should be saved for data analysis processes and later on qualifications
     symptoms_list = models.TextField(max_length=500)
     date = models.DateTimeField(default=timezone.now)
+    clean_input = models.TextField(max_length=300)
+
+
 
     # symptoms : dataframe
     """
@@ -149,7 +153,7 @@ class InputModel(models.Model):
 
     # your ML model goes here
     sample_output = 'symptoms_list'
-    #diseases = ml.findDesesFromSymptom(sample_clean)
+    #diseases = ml.findDesesFromSymptom(clean_input)
 
 
     # this function saves the output in Reports Model
@@ -161,18 +165,42 @@ class InputModel(models.Model):
         return str(self.date)
 
 
-class TempInput(models.Model):
-    ID = models.AutoField(primary_key=True, unique=True)
-    temp_input = models.TextField(max_length=200)
+class TempInputModel2(models.Model):
+    user = models.ForeignKey(UserProfileModel, on_delete=models.CASCADE)
+
+    temp_choice_input = models.TextField(max_length=300)
+    str_temp_choice = str(temp_choice_input)
+    symptom_list2 = models.TextField(max_length=300)
+    str_symptom2 = str(symptom_list2)
+
+    list_symptom2 = str_symptom2.split(',')
+
+    # calculate clean input
+    clean_input = get_symptoms(str_temp_choice, list_symptom2)
+    #diseases = ml.findDesesFromSymptom(clean_input)
+
+    def save(self, *args, **kwargs):
+        output = self.clean_input
+        #output = self.diseases
+        #return InputModel.objects.create(clean_input=output, user=self.user)
+        return Results.objects.create(input=output, created_by=self.user)
 
     def __str__(self):
-        return str(self.ID)
+        return str(timezone.now())
 
 
 class TempInputModel(models.Model):
     user = models.ForeignKey(UserProfileModel, on_delete=models.CASCADE)
 
     temp_input = models.TextField(max_length=200)
+
+    # calculate choices
+    choices, symptom_list1 = feed_back_choice(temp_input)
+
+    def save(self, *args, **kwargs):
+        output = str((self.choices))
+        output2 = str((self.symptom_list1))
+        return TempInputModel2.objects.create(temp_choice_input=output, symptom_list2=output2, user=self.user)
 
     def __str__(self):
         return str(timezone.now())

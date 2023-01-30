@@ -10,7 +10,7 @@ from sklearn.metrics import recall_score
 import random
 
 #TODO change the level
-logging.basicConfig(filename='machineLearningModel.loging', level=logging.INFO)
+#logging.basicConfig(filename='machineLearningModel.loging', level=logging.INFO)
 import numpy as np
 
 
@@ -23,7 +23,7 @@ def makeTheTree():
 
     df_train = df_train.fillna(0)
     df_train = df_train.drop(columns='Unnamed: 133')
-    logging.info(df_train.describe())
+    #logging.info(df_train.describe())
     # TODO why by 0 and not delte ?
 
     X = df_train.drop(columns=['prognosis'])
@@ -32,32 +32,51 @@ def makeTheTree():
     iris = load_iris()
     clf = tree.DecisionTreeClassifier(max_depth=50)
     clf = clf.fit(X_train, y_train)
-    logging.info('Accuracy in validation: ',accuracy_score(y_test,clf.predict(X_test)))
-    dot_data = tree.export_graphviz(clf, out_file=None)
+    #logging.info('Accuracy in validation: ',accuracy_score(y_test,clf.predict(X_test)))
+    #dot_data = tree.export_graphviz(clf, out_file=None)
     #graph = graphviz.Source(dot_data)
     #graph.render("GraphicalTree")
     input_file = "E:\\Git\\Silk_Road\\Project\\MyApp\\Testing.csv"
     # comma delimited is the default
 
     df_tests = pd.read_csv(input_file, header = 0)
-    logging.info(df_tests.describe())
-    logging.info(df_train.isna().sum().sum())
+    #logging.info(df_tests.describe())
+    #logging.info(df_train.isna().sum().sum())
     df_tests = df_tests.fillna(0)
     X_tests = df_tests.drop(columns=['prognosis'])
     y_tests = df_tests['prognosis']
-    logging.info('Accuracy in test: ',accuracy_score(y_tests,clf.predict(X_tests)))
-    logging.info('f1 Macro(Unweighted mean. This does not take label imbalance into account'
-          '):',f1_score(y_tests,clf.predict(X_tests),average='macro'))
-    logging.info('recall score Macro: ',recall_score(y_tests,clf.predict(X_tests),average='macro'))
+    #logging.info('Accuracy in test: ',accuracy_score(y_tests,clf.predict(X_tests)))
+    #logging.info('f1 Macro(Unweighted mean. This does not take label imbalance into account'
+    #      '):',f1_score(y_tests,clf.predict(X_tests),average='macro'))
+    #logging.info('recall score Macro: ',recall_score(y_tests,clf.predict(X_tests),average='macro'))
 
     return clf
 
 
-def findDesesFromSymptom(Symptoms):
-    clf = makeTheTree()
-    return clf.predict(pd.DataFrame(Symptoms)) # returns disease
+def findDesesFromSymptom(Userinput):
+    input_file = 'E:\\Git\\Silk_Road\\Project\\MyApp\\Training.csv'
+    # comma delimited is the default
 
-# Might be helpful for test #
+    df_train = pd.read_csv(input_file, header=0)
+    # df_train.isna().sum().sum()
+
+    df_train = df_train.fillna(0)
+    df_train = df_train.drop(columns='Unnamed: 133')
+    # logging.info(df_train.describe())
+    # TODO why by 0 and not delte ?
+    X = df_train.drop(columns=['prognosis'])
+    final_input = pd.DataFrame(data=X, index=[1]).fillna(0)
+    chose_symptom = Userinput.split(',')
+    for i in chose_symptom:
+        for column in final_input.columns:
+            if i == column:
+
+                final_input[column] = 1
+
+    clf = makeTheTree()
+    return clf.predict(final_input) # returns disease
+    # Might be helpful for test #
+print(findDesesFromSymptom('yellow_crust_ooze,palpitations'))
 '''
 l = {}
 c = [1,0]

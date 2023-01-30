@@ -16,7 +16,7 @@ def feed_back_choice(input_info_from_user): # input: skin, pain
     :param input_info_from_user: user type the keywords of symptoms in the blank (type: list,separate with comma)
     :return: possible/suggested choices of symptoms from the database.
     """
-    testing_file = pd.read_csv("Testing.csv")
+    testing_file = pd.read_csv("E:\\Git\\Silk_Road\\Project\\MyApp\\Testing.csv")
     testing_file = testing_file.drop(['prognosis'], axis=1)
     symptoms = list(testing_file.columns)
 
@@ -24,7 +24,8 @@ def feed_back_choice(input_info_from_user): # input: skin, pain
     for name in symptoms:
         symptom_list.append(name.replace('_', ' '))
 
-    input_list = input_info_from_user.split(',')
+    str_input = str(input_info_from_user)
+    input_list = str_input.split(',')
 
     # provide possible choices of symptoms to the users to choose.
     feedback_choice = []

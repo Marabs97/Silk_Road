@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import f1_score
 from sklearn.metrics import recall_score
-import graphviz
+#import graphviz
 import random
 
 #TODO change the level
@@ -15,7 +15,7 @@ import numpy as np
 
 
 def makeTheTree():
-    input_file = "Training.csv"
+    input_file = 'E:\\Git\\Silk_Road\\Project\\MyApp\\Training.csv'
     # comma delimited is the default
 
     df_train = pd.read_csv(input_file, header=0)
@@ -34,9 +34,9 @@ def makeTheTree():
     clf = clf.fit(X_train, y_train)
     logging.info('Accuracy in validation: ',accuracy_score(y_test,clf.predict(X_test)))
     dot_data = tree.export_graphviz(clf, out_file=None)
-    graph = graphviz.Source(dot_data)
-    graph.render("GraphicalTree")
-    input_file = "Testing.csv"
+    #graph = graphviz.Source(dot_data)
+    #graph.render("GraphicalTree")
+    input_file = "E:\\Git\\Silk_Road\\Project\\MyApp\\Testing.csv"
     # comma delimited is the default
 
     df_tests = pd.read_csv(input_file, header = 0)

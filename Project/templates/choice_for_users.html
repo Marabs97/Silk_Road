@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Choice</title>
-</head>
+{% extends 'base.html' %}
+
 <body>
     <h1>Please select and type from the following options.</h1>
     <h2>(symptoms from databases......TODO)</h2>
@@ -12,6 +8,10 @@
         <input type="text" name="symptoms_choice_user">
         <input type="submit" value="search">
     </form>
-
+    {% block content %}
+        <p>possible inputs</p>
+        {% for i in feed_back_choice %}
+            {{ i }}
+        {% endfor %}
+    {% endblock %}
 </body>
-</html>

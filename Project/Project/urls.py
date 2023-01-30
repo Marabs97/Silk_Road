@@ -35,6 +35,7 @@ urlpatterns = [
     path('profile', v1.profile_view, name='profile_view'),
     path('reports', v1.reports_view, name='reports_view'),
     path('input-symptoms', v1.input_symptoms_view, name='input_symptoms_view'),
+    path('choice_for_users', v1.PassCleanData_view, name='PassCleanData_view'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 '''

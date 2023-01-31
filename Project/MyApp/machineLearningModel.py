@@ -15,7 +15,7 @@ import numpy as np
 
 
 def makeTheTree():
-    url = 'https://drive.google.com/file/d/1kvMs5zK1TRiUeg574_kbSc1mnWumDkxc/view?usp=sharing'
+    url = 'https://kaggle/input/disease-prediction-using-machine-learning/Training.csv'
     file_id = url.split('/')[-2]
     dwn_url = 'https://drive.google.com/uc?id=' + file_id
     df_train = pd.read_csv(dwn_url, header=0)
@@ -36,7 +36,7 @@ def makeTheTree():
     #dot_data = tree.export_graphviz(clf, out_file=None)
     #graph = graphviz.Source(dot_data)
     #graph.render("GraphicalTree")
-    url = 'https://drive.google.com/file/d/1OVsjNHnIPjVn-IV4B-9brclk2xyNyoIE/view?usp=sharing'
+    url = 'https://kaggle/input/disease-prediction-using-machine-learning/Testing.csv'
     file_id = url.split('/')[-2]
     dwn_url = 'https://drive.google.com/uc?id=' + file_id
     df_tests= pd.read_csv(dwn_url, header=0)

@@ -25,6 +25,7 @@ The model uses two functions: makeTheTree and findDesesFromSymptom.
 
 makeTheTree: This function loads the training data from Google Drive, prepares it for the model, trains the model using Decision Tree, and returns the trained model.
 findDesesFromSymptom: This function takes user input of symptoms as a comma-separated string, prepares it for prediction, and returns the predicted disease.
+
 **Dependencies**
 
 This code uses the following libraries:

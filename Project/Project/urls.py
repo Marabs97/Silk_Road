@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from MyApp import views as v1
-#from MyApp.accounts import urls as accounts_urls
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,18 +23,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', v1.index),
     path('home', v1.index, name='home'),
-    #path('register', v1.register, name='register'),
-
-    #path('polls/', include('polls.urls')),
-    #path('accounts/', include(accounts_urls)),
     path('accounts/', include('django.contrib.auth.urls')),
     path("signup/", v1.SignUpView.as_view(), name="signup"),
-    #path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    #path('profile/<username>', v1.profile_view, name='profile_view'),
     path('profile', v1.profile_view, name='profile_view'),
     path('reports', v1.reports_view, name='reports_view'),
     path('input-symptoms', v1.input_symptoms_view, name='input_symptoms_view'),
-    path('choice_for_users', v1.PassCleanData_view, name='PassCleanData_view'),
     path('error', v1.error_token_view, name='error_token_view'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

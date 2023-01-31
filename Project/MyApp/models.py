@@ -106,17 +106,6 @@ class Results(models.Model):
         return str(f"report {self.report_ID}")
 
 
-'''
-#access_level = models.IntegerField(choices=ACCESS_LEVEL_CHOICES, default=ACCESS_PATIENT)
-ACCESS_PATIENT = 11
-ACCESS_DOCTOR = 22
-ACCESS_COMPANY = 33
-ACCESS_LEVEL_CHOICES = [
-    (ACCESS_PATIENT, "Patient"),
-    (ACCESS_DOCTOR, "Doctor"),
-    (ACCESS_COMPANY, "Company"),
-]
-'''
 
 
 class Supervisor(models.Model):
@@ -129,50 +118,6 @@ class Supervisor(models.Model):
         return str(f"{self.name} supervising profile")
 
 
-class TempInputModel2(models.Model):
-    user = models.ForeignKey(UserProfileModel, on_delete=models.CASCADE)
-
-    temp_choice_input = models.TextField(max_length=300)
-    str_temp_choice = str(temp_choice_input)
-    #list_temp_choice = str_temp_choice.split(',')
-
-    symptom_list2 = models.TextField(max_length=5000)
-    str_symptom2 = str(symptom_list2)
-    list_symptom2 = str_symptom2.split(',')
-    l = [0 for i in range(133)]
-
-
-    # calculate clean input
-    clean_input = get_symptoms(str_temp_choice, list_symptom2)
-    #diseases = ml.findDesesFromSymptom(clean_input)
-
-    def save(self, *args, **kwargs):
-        output = self.clean_input
-        #output = self.diseases
-        #return InputModel.objects.create(clean_input=output, user=self.user)
-        return Results.objects.create(input=output, hilfen=self.list_symptom2, created_by=self.user)
-
-    def __str__(self):
-        return str(timezone.now())
-
-
-class TempInputModel(models.Model):
-    user = models.ForeignKey(UserProfileModel, on_delete=models.CASCADE)
-
-    temp_input = models.TextField(max_length=200)
-
-    # calculate choices
-    choices, symptom_list1 = feed_back_choice(temp_input)
-
-    def save(self, *args, **kwargs):
-        output = str((self.choices))
-        output2 = str((self.symptom_list1))
-        return TempInputModel2.objects.create(temp_choice_input=output, symptom_list2=output2, user=self.user)
-
-    def __str__(self):
-        return str(timezone.now())
-
-
 class Hold(models.Model):
 
     text = models.TextField(max_length=300)
@@ -182,10 +127,7 @@ class Hold(models.Model):
 
 
 def FindDisease3(inp):
-
-
     deses = ml.findDesesFromSymptom(inp)
-
     return deses
 
 ### This is CORRECTED input from user, done by dynamic search in views

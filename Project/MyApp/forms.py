@@ -1,27 +1,10 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import UserProfileModel, TempInputModel, InputModel
+from .models import UserProfileModel, InputModel
 from django.core.exceptions import ValidationError
 
 
 # Create your forms here.
-
-'''
-class NewUserForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-    password = forms.CharField(widget=forms.PasswordInput())
-
-    class Meta:
-        model = UserProfileModel
-        fields = ("first_name", "last_name", "email", "phone_number")
-
-    def save(self, commit=True):
-        user = super(NewUserForm, self).save(commit=False)
-        user.email = self.cleaned_data['email']
-        if commit:
-            user.save()
-        return user
-'''
 
 
 class NewUserForm(forms.ModelForm):
@@ -56,17 +39,6 @@ class UpdateProfileForm(UserChangeForm):
     class Meta:
         model = UserProfileModel
         fields = ("username", "email", "phone_number", "gender", "first_name", "middle_name", "last_name", "tokens", "access_level", "uid")
-
-
-
-class TempInputForm(forms.ModelForm):
-
-    #user = forms.ModelChoiceField(label="", queryset=TempInputModel.objects.all(), widget=forms.HiddenInput())
-
-    class Meta:
-        model = TempInputModel
-        fields = ['temp_input', 'user']
-        #widgets = {'user': forms.HiddenInput()}
 
 
 class InputForm(forms.ModelForm):

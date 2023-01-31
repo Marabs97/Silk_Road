@@ -77,6 +77,7 @@ def findDesesFromSymptom(Userinput):
     return clf.predict(final_input) # returns disease
     # Might be helpful for test #
 print(findDesesFromSymptom('yellow_crust_ooze,palpitations'))
+
 '''
 l = {}
 c = [1,0]

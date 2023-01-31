@@ -6,13 +6,18 @@
 {% block content %}
 
  <form method="post">
- <p>Please input symptoms {{ user.first_name }} {{ user.last_name }}</p>
+
+
+ </form>
+<div class="card">
+  <div class="card-body">
+    <h4> Please input symptoms: {{ user.first_name|title }}</h4>
    {% csrf_token %}
     <div class="mb-3">
     {{ form.as_p }}
+
     <button type="submit" class="btn btn-outline-primary">submit</button>
     </div>
-
- </form>
-
+  </div>
+</div>
 {% endblock %}

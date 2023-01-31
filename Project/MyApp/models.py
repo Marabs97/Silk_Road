@@ -9,6 +9,9 @@ import pandas as pd
 import MyApp.machineLearningModel as ml
 import random
 from MyApp.getSymptoms import feed_back_choice, get_symptoms
+from django.db.models.signals import post_save
+from django.core.cache import cache
+
 # Create your models here.
 
 
@@ -179,7 +182,10 @@ class Hold(models.Model):
 
 
 def FindDisease3(inp):
+
+
     deses = ml.findDesesFromSymptom(inp)
+
     return deses
 
 ### This is CORRECTED input from user, done by dynamic search in views
@@ -197,7 +203,7 @@ class InputModel(models.Model):
 
     #out1 = models.TextField(auto_created=(FindDisease1(self=self, i=str_input)))
 
-    disease = models.TextField(max_length=3000, default=None)
+    disease = models.TextField(max_length=3000, default=None, auto_created=FindDisease3(str_input))
 
     def FindDisease2(self, inp):
         deses = ml.findDesesFromSymptom(inp)
@@ -243,11 +249,11 @@ class InputModel(models.Model):
         return str(self.date)
 
     def save(self, *args, **kwargs):
-        output = str((self.disease))
+        #output = str((self.disease))
         output2 = str((self.input_user))
-        output3 = str(self.FindDisease1(i=output))
+        #output3 = str(self.FindDisease1(i=output))
         #output4 = str(self.FindDisease2(inp=output2))
-        output5 = FindDisease3(self.str_input)
-        return Results.objects.create(result=output5, input=output2, hilfen=output, created_by=self.user)
+        #output5 = FindDisease3(self.str_input)
+        return Results.objects.create(input=output2, created_by=self.user)
 
 

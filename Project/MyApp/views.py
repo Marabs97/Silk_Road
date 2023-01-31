@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
 from .models import UserProfileModel, Results, TempInputModel
-from .forms import NewUserForm, TempInputForm, TempChoiceForm
+from .forms import NewUserForm, TempInputForm, InputForm
 from django.contrib import messages
 
 from django.views.generic.detail import DetailView
@@ -71,12 +71,12 @@ class AccountInformationView(UserPassesTestMixin, DetailView):
 # TODO Modify this function for searching
 @login_required
 def input_symptoms_view(request):
-    user = get_object_or_404(UserProfileModel, username=request.user.username)
+    user1 = get_object_or_404(UserProfileModel, username=request.user.username)
 
-    tk = user.tokens
+    tk = user1.tokens
 
     # create a form instance and populate it with data from the request:
-    form = TempInputForm(request.POST or None)
+    form = InputForm(request.POST, initial={'user': request.user.id})
     # create the django object in memory, but don't save to the database
 
     if tk >= 1:
@@ -94,18 +94,19 @@ def input_symptoms_view(request):
 
                 UserProfileModel.objects.filter(username=request.user.username).update(tokens=(tk - 1))
                 # redirect to a new URL:
-                return HttpResponseRedirect('/choice_for_users')
+                return HttpResponseRedirect('/reports')
 
 
         # if a GET (or any other method) we'll create a blank form
         else:
-            form = TempInputForm()
+            form = InputForm()
     else:
         # Better be a error page
-        return HttpResponseRedirect('/home')
+        print("user has no tokens")
+        return HttpResponseRedirect('/profile')
 
     template_name = 'input_symptoms.html'
-    context = {'form': form}
+    context = {'form': form, 'user1': user1}
     return render(request, template_name, context)
 
 

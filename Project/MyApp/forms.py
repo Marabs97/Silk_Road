@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import UserProfileModel, TempInputModel
+from .models import UserProfileModel, TempInputModel, InputModel
 from django.core.exceptions import ValidationError
 
 
@@ -69,5 +69,9 @@ class TempInputForm(forms.ModelForm):
         #widgets = {'user': forms.HiddenInput()}
 
 
-class TempChoiceForm(forms.ModelForm):
-    choices = forms.ChoiceField()
+class InputForm(forms.ModelForm):
+
+    class Meta:
+        model = InputModel
+        fields = ['input_user', 'user']
+        #widgets = {'user': forms.HiddenInput()}

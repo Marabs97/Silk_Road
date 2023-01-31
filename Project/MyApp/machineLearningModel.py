@@ -15,7 +15,7 @@ import numpy as np
 
 
 def makeTheTree():
-    url = 'https://www.uplooder.net/files/188dddec2068fde69746fe53c3d2dba2/Training.csv.html'
+    url = 'https://drive.google.com/file/d/1kvMs5zK1TRiUeg574_kbSc1mnWumDkxc/view?usp=sharing'
     file_id = url.split('/')[-2]
     dwn_url = 'https://drive.google.com/uc?id=' + file_id
     df_train = pd.read_csv(dwn_url, header=0)
@@ -36,7 +36,7 @@ def makeTheTree():
     #dot_data = tree.export_graphviz(clf, out_file=None)
     #graph = graphviz.Source(dot_data)
     #graph.render("GraphicalTree")
-    url = 'https://www.uplooder.net/files/188dddec2068fde69746fe53c3d2dba2/Training.csv.html'
+    url = 'https://drive.google.com/file/d/1OVsjNHnIPjVn-IV4B-9brclk2xyNyoIE/view?usp=sharing'
     file_id = url.split('/')[-2]
     dwn_url = 'https://drive.google.com/uc?id=' + file_id
     df_tests= pd.read_csv(dwn_url, header=0)
@@ -77,7 +77,6 @@ def findDesesFromSymptom(Userinput):
     return clf.predict(final_input) # returns disease
     # Might be helpful for test #
 print(findDesesFromSymptom('yellow_crust_ooze,palpitations'))
-
 '''
 l = {}
 c = [1,0]

@@ -8,7 +8,7 @@ from django.utils import timezone
 import pandas as pd
 import MyApp.machineLearningModel as ml
 import random
-from MyApp.getSymptoms import feed_back_choice, get_symptoms
+#from MyApp.getSymptoms import feed_back_choice, get_symptoms
 from django.db.models.signals import post_save
 from django.core.cache import cache
 

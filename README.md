@@ -24,6 +24,7 @@ This code is a machine learning model for diagnosing diseases based on patient s
 The model uses two functions: makeTheTree and findDesesFromSymptom.
 
 makeTheTree: This function loads the training data from Google Drive, prepares it for the model, trains the model using Decision Tree, and returns the trained model.
+
 findDesesFromSymptom: This function takes user input of symptoms as a comma-separated string, prepares it for prediction, and returns the predicted disease.
 
 **Dependencies**
@@ -31,11 +32,17 @@ findDesesFromSymptom: This function takes user input of symptoms as a comma-sepa
 This code uses the following libraries:
 
 logging
+
 pandas
+
 numpy
+
 scikit-learn
+
 graphviz (commented out in the code)
+
 Usage
+
 To use the code, call the findDesesFromSymptom function with the symptoms input and it will return the predicted disease.
 
 **Note**

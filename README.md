@@ -5,55 +5,59 @@ The idea is to get the symptoms from the patients, MD students or doctors and pr
 
 
 
-**Front-end**
+### Front-end ###
 
 
-For this part and restyling the html pages Bootstrap was used.
+For this part and restyling the html pages Bootstrap v4.4 was used. Since it is a free and open-source CSS framework directed at responsive and contains HTML, CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
 
 
+- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -
 
-
-**Machine learning**
+### Machine learning ###
 
 **Introduction**
 
+
 This code is a machine learning model for diagnosing diseases based on patient symptoms. The data for training the model is a CSV file stored on Google Drive, and the model uses the Decision Tree algorithm from the scikit-learn library.
+
 
 **How it Works**
 
 The model uses two functions: makeTheTree and findDesesFromSymptom.
 
-makeTheTree: This function loads the training data from Google Drive, prepares it for the model, trains the model using Decision Tree, and returns the trained model.
+  * MakeTheTree: This function loads the training data from Google Drive, prepares it for the model, trains the model using Decision Tree, and returns the trained model.
 
-findDesesFromSymptom: This function takes user input of symptoms as a comma-separated string, prepares it for prediction, and returns the predicted disease.
+  * FindDesesFromSymptom: This function takes user input of symptoms as a comma-separated string, prepares it for prediction, and returns the predicted disease.
+
 
 **Dependencies**
 
 This code uses the following libraries:
 
-logging
+* logging
 
-pandas
+* pandas
 
-numpy
+* numpy
 
-scikit-learn
+* scikit-learn
 
-graphviz (commented out in the code)
+* graphviz (commented out in the code)
 
-Usage
+* Usage
 
 To use the code, call the findDesesFromSymptom function with the symptoms input and it will return the predicted disease.
+
 
 **Note**
 
 The code has some commented-out lines for logging and graph visualization. It also has some TODO comments indicating possible changes in the future.
 
+- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - 
+### Back-end ###
 
-**Backend**
 
-
-## Installing
+#### Installing
 
 Step by step commands on how to run this project on your computer
 
@@ -98,7 +102,7 @@ python manage.py createsuperuser
 
 <br>
 
-## Running the tests
+#### Running the tests
 
 ```
 python manage.py runserver

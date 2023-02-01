@@ -61,15 +61,15 @@ The code has some commented-out lines for logging and graph visualization. It al
 ### Back-end ###
 **Amirreza Aleyasin**
 
-* Tasks done:
-Handling django project backend and coding all required files including:
-Models.py: user profiles, resports and inputs.
-managers.py: custom management to handle custom user model.
-test.py: testing usermodel.
-forms.py: required to maniupulate Data Base from FrontEnd
-urls.py: web urls to handle pages and to initiate functions from views.py.
-views.py: initiating the functions and passing objects from database to the front end.
-settings.py: required settings for django-apps.
+* Tasks done *:
+* Handling django project backend and coding all required files including:
+* Models.py: user profiles, resports and inputs.
+* managers.py: custom management to handle custom user model.
+* test.py: testing usermodel.
+* forms.py: required to maniupulate Data Base from FrontEnd
+* urls.py: web urls to handle pages and to initiate functions from views.py.
+* views.py: initiating the functions and passing objects from database to the front end.
+* settings.py: required settings for django-apps.
 
 
 #### Installing

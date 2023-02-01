@@ -6,6 +6,8 @@ The idea is to get the symptoms from the patients, MD students or doctors and pr
 
 
 ### Front-end ###
+**Maryam Abbasi**
+
 
 
 For this part and restyling the html pages Bootstrap v4.4 was used. Since it is a free and open-source CSS framework directed at responsive and contains HTML, CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
@@ -14,6 +16,8 @@ For this part and restyling the html pages Bootstrap v4.4 was used. Since it is 
 - - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -
 
 ### Machine learning ###
+**Parsa Hariri**
+
 
 **Introduction**
 
@@ -55,6 +59,17 @@ The code has some commented-out lines for logging and graph visualization. It al
 
 - - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - 
 ### Back-end ###
+**Amirreza Aleyasin**
+
+* Tasks done:
+Handling django project backend and coding all required files including:
+Models.py: user profiles, resports and inputs.
+managers.py: custom management to handle custom user model.
+test.py: testing usermodel.
+forms.py: required to maniupulate Data Base from FrontEnd
+urls.py: web urls to handle pages and to initiate functions from views.py.
+views.py: initiating the functions and passing objects from database to the front end.
+settings.py: required settings for django-apps.
 
 
 #### Installing
